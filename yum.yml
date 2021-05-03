@@ -1,0 +1,27 @@
+- hosts: all
+  tasks:
+          - file:
+                  state: directory
+                  path: "/dvd1"
+
+          - mount:
+                  src: "/dev/cdrom"
+                  path: "/dvd1"
+                  state: mounted
+                  fstype: "iso9660"
+
+          - yum_repository:
+                  baseurl: "/dvd1/AppStream"
+                  name: "mydvd1"
+                  description: "myyum dvd1 for package"
+                  gpgcheck: no
+
+          - yum_repository:
+                  baseurl: "/dvd1/BaseOS"
+                  description: "myyum dvd2 for package"
+                  gpgcheck: no
+                  name: "mydvd2"
+        
+   
+
+       

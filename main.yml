@@ -1,0 +1,9 @@
+- name: yum configuration playbook
+  import_playbook: yum.yml
+
+- name: Webserver Playbook
+  import_playbook: webserver.yml
+
+- name: LoadBalancer Playbook
+  import_playbook: loadbalancer.yml
+
